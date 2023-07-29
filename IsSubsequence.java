@@ -14,3 +14,19 @@ Input: s = "axc", t = "ahbgdc"
 Output: false
 */
 
+class Solution {
+    // Tc: O(n) and Sc: O(1)
+    public boolean isSubsequence(String s, String t) {
+        int sm = 0;
+        int tm = 0;
+        while(sm < s.length() && tm < t.length())
+        {
+            if(s.charAt(sm) == t.charAt(tm))
+            {
+                sm++;
+            }
+            tm++;
+        }
+        return sm == s.length();
+    }
+}
