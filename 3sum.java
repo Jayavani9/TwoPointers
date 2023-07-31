@@ -13,6 +13,38 @@ nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0.
 The distinct triplets are [-1,0,1] and [-1,-1,2].
 Notice that the order of the output and the order of the triplets does not matter.
 
+  
+// Solution using hashset and 2 pointer
+// Tc: O(n^2) and Sc: O(n)
+         Set<List<Integer>> result = new HashSet<>();
+        Arrays.sort(nums);
+
+        for (int i = 0; i < nums.length - 2; i++) {
+            int left = i + 1;
+            int right = nums.length - 1;
+
+            while (left < right) {
+                int sum = nums[i] + nums[left] + nums[right];
+
+                if (sum == 0) {
+                    result.add(Arrays.asList(nums[i], nums[left], nums[right]));
+                    left++;
+                    right--;
+                } else if (sum < 0) {
+                    left++;
+                } else {
+                    right--;
+                }
+            }
+        }
+
+        return new ArrayList<>(result);
+
+
+    }
+}
+
+
 // Time Limit Exceeded Solution
 class Solution {
   // Tc: O(n^3) and Sc: O(n) 
