@@ -15,12 +15,12 @@ Notice that the order of the output and the order of the triplets does not matte
 
 //Using 2 pointers with 
 // Tc: O(n^2) and Sc: O(1)
-                List<List<Integer>> res = new ArrayList<>();
-        Arrays.sort(nums);
+        List<List<Integer>> res = new ArrayList<>(); //result to return 
+        Arrays.sort(nums);      //Sorting nums
 
         for (int i = 0; i < nums.length; i++) {
             if (i > 0 && nums[i] == nums[i - 1]) {
-                continue;
+                continue;                              // If the index is not 0 and if i at comparision has duplicates next to it
             }
 
             int left = i + 1;
