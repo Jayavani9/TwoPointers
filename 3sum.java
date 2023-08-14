@@ -14,7 +14,7 @@ The distinct triplets are [-1,0,1] and [-1,-1,2].
 Notice that the order of the output and the order of the triplets does not matter.
 
 //Using 2 pointers with 
-// Tc: O(n^2) and Sc: O(1)
+// Time Complexity: O(n^2) and Space Complexity: O(1)
         List<List<Integer>> res = new ArrayList<>(); //result to return 
         Arrays.sort(nums);      //Sorting nums
 
